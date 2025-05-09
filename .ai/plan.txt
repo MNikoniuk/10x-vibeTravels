@@ -1,0 +1,52 @@
+<<conversation_summary>>
+<<decisions>>
+1. Plany podróży obejmują od 3 do 14 dni.  
+2. Lista predefiniowanych kategorii atrakcji (min. 10) z możliwością dodania własnych tagów.  
+3. AI alokuje notatki według optymalizacji trasy; nadmiar atrakcji jest odrzucany.  
+4. Komunikacja z AI odbywa się przez plik tekstowy; retry do 5×, potem komunikat o błędzie.  
+5. Przycisk „Oszacuj koszt podróży” znajduje się w panelu podsumowania przed zapisem.  
+6. Walidacja tylko całkowitego budżetu („zakres całkowity”).  
+7. Brak dodatkowych warunków zapisu (wystarczy tytuł z lokalizacją i datami).  
+8. MVP desktop-only, bez responsywności mobilnej.  
+<</decisions>>
+
+<<matched_recommendations>>
+1. Zdefiniować i wdrożyć domyślną listę kategorii z opcją tworzenia własnych tagów.  
+2. Opracować mechanizm retry na wywołania AI z jasnym komunikatem po 5 nieudanych próbach.  
+3. Zaprojektować przycisk „Oszacuj koszt podróży” w panelu podsumowania edytora planu.  
+4. Wdrożyć walidację całkowitego budżetu przez sumowanie kosztów kategorii.  
+5. Dodać pole „Tytuł planu” (lokalizacja + daty) przy zapisie planu.  
+6. Zaimplementować popup ostrzegający o niezapisanych zmianach w edycji.  
+<</matched_recommendations>>
+
+<<prd_planning_summary>>
+a. Główne wymagania funkcjonalne produktu  
+- Autoryzacja e-mail/hasło.  
+- CRUD notatek podróżniczych z polami: lokalizacja, zakres cen, kategorie, typ atrakcje (dynamiczne/spokojne), budżet dzienny, poziom aktywności.  
+- Generowanie 3 harmonogramów + 1 alternatywa na atrakcję przez AI (tekstowy payload).  
+- Edycja planu: zmiana kolejności, usuwanie, dodawanie notatek.  
+- Prognoza kosztów (transport, noclegi, wyżywienie, atrakcje, inne) na żądanie.  
+- Zapis planu z tytułem (lokalizacja i daty).  
+- Popup ostrzegający o niezapisanych zmianach.  
+
+b. Kluczowe historie użytkownika i ścieżki  
+1. Użytkownik loguje się, tworzy notatki z miejscami do odwiedzenia.  
+2. Użytkownik definiuje preferencje i wywołuje AI w celu wygenerowania planu.  
+3. Użytkownik edytuje harmonogram, klika „Oszacuj koszt”, wprowadza tytuł i zapisuje plan.  
+4. Plan trafia do zakładki „Podróże” w koncie użytkownika.  
+
+c. Kryteria sukcesu i metryki  
+- % użytkowników z wypełnionymi preferencjami (cel: 90%).  
+- % użytkowników zapisujących ≥3 plany/rok (cel: 75%).  
+- Liczba zaakceptowanych i zapisanych planów jako główny KPI.  
+
+d. Obszary wymagające dalszego doprecyzowania  
+- Konkretna lista domyślnych kategorii atrakcji (nazwy).  
+- Zestaw referencyjnych stawek do estymacji kosztów, które AI będzie wykorzystywać.  
+<</prd_planning_summary>>
+
+<<unresolved_issues>>
+1. Brak ustalonej listy nazw domyślnych kategorii atrakcji.  
+2. Nieokreślone stawki referencyjne do obliczeń kosztów przez AI.  
+<</unresolved_issues>>
+<</conversation_summary>>
